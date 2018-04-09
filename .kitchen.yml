@@ -1,0 +1,27 @@
+driver:
+  name: docker
+  run_command: /usr/sbin/init
+  volume: /tmp:/tmp
+  use_sudo: false
+  publish_all: true
+  cap_add:
+    - SYS_ADMIN
+  privileged: true
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-7
+    driver_config:
+      provision_command:
+        - yum install systemd -y
+        - yum install wget -y
+        - yum install git -y
+        - yum install lvm2 -y
+
+
+suites:
+  - name: default
+    run_list:
+    - recipe[gem-server::default]

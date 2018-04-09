@@ -1,0 +1,9 @@
+---
+username: kitchen
+ssh_key: "/Users/erinpolsfoot/Chef/gem-server/.kitchen/docker_id_rsa"
+image_id: ec91de5fe556
+container_id: dce06e520c25726903b535605dc4056ec5898573289fb55511359bed409cb603
+hostname: localhost
+port: 32772
+last_action: converge
+last_error: 
